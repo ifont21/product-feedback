@@ -2,7 +2,10 @@ module github.com/ifont21/product-feedback-service
 
 go 1.18
 
-require github.com/google/uuid v1.3.0
+require (
+	github.com/google/uuid v1.3.0
+	github.com/joho/godotenv v1.4.0
+)
 
 require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
@@ -10,12 +13,14 @@ require (
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/githubnemo/CompileDaemon v1.4.0 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
-	github.com/joho/godotenv v1.4.0 // indirect
+	github.com/pkg/errors v0.9.1 // indirect
 	github.com/radovskyb/watcher v1.0.7 // indirect
 	golang.org/x/time v0.0.0-20201208040808-7e3f01d25324 // indirect
+	gopkg.in/square/go-jose.v2 v2.6.0 // indirect
 )
 
 require (
+	github.com/auth0/go-jwt-middleware/v2 v2.0.1
 	github.com/gofrs/uuid v4.0.0+incompatible // indirect
 	github.com/jackc/chunkreader/v2 v2.0.1 // indirect
 	github.com/jackc/pgconn v1.12.1 // indirect

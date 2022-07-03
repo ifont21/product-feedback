@@ -1,13 +1,11 @@
 package handlers
 
 import (
-	"fmt"
-	"net/http"
-
 	"github.com/google/uuid"
 	"github.com/ifont21/product-feedback-service/internal/domain/onboarding"
 	"github.com/ifont21/product-feedback-service/internal/services"
 	"github.com/labstack/echo/v4"
+	"net/http"
 )
 
 type projectPayload struct {
@@ -27,8 +25,6 @@ func NewProjectHTTPHandler(service services.ProjectManagementService) ProjectHtt
 
 func (h ProjectHttpHandler) GetAllProjects(c echo.Context) error {
 	projects, err := h.projectService.GetAllProjects("")
-
-	fmt.Println("Get Projects ...")
 
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, err)
