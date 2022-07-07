@@ -19,6 +19,9 @@ func main() {
 		Format: "method=${method}, uri=${uri}, status=${status}, latency=${latency_human}, error=${error}\n",
 	}))
 
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"http://localhost:4200"},
+	}))
 	e.Use(echo.WrapMiddleware(helpers.EnsureValidToken()))
 
 	v1 := e.Group("/api")
