@@ -7,6 +7,7 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { AuthButtonModule } from './auth-button.component';
 import { ProjectModule } from './projects.component';
+import { UiHeaderModule } from '@pfeedback/ui-shell';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +15,7 @@ import { ProjectModule } from './projects.component';
     BrowserModule,
     AuthButtonModule,
     ProjectModule,
+    UiHeaderModule,
     AuthModule.forRoot({
       ...environment.auth,
       httpInterceptor: {

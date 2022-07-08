@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
-  selector: 'pfeedback-ws-root',
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'ui-pfeedback';
+
+  constructor(public authService: AuthService) {}
 }

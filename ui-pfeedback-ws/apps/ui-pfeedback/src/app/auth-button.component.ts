@@ -7,8 +7,6 @@ import { Observable } from 'rxjs';
   selector: 'app-auth-button',
   template: `
     <h1>Product Feedback App</h1>
-    <button (click)="authService.loginWithRedirect()">Log In</button>
-    <button (click)="authService.logout()">Log Out</button>
     <div>
       <h2>User Info</h2>
       {{ userProfile$ | async | json}}
