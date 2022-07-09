@@ -6,12 +6,14 @@ import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { PFeedbackShellModule } from '@pfeedback/shell';
+import { AppRoutingModule } from './app.routes';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     PFeedbackShellModule,
+    AppRoutingModule,
     AuthModule.forRoot({
       ...environment.auth,
       httpInterceptor: {

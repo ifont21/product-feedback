@@ -13,7 +13,7 @@ import { User } from '@auth0/auth0-angular';
   template: `<div class="h-14 px-6 py-8">
     <div class="flex justify-between">
       <div>
-        <!-- Logo here -->
+        <span>PFeedback</span>
       </div>
       <ul class="flex items-center">
         <li>
