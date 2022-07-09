@@ -2,11 +2,9 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "feedback-ang-feedback-data": "libs/feedback-ang/feedback-data",
-    "feedback-ang-feedback-features": "libs/feedback-ang/feedback-features",
-    "feedback-ang-ui-feedback": "libs/feedback-ang/ui-feedback",
+    "product-feedback-shell-pfeedback-feature-header": "libs/product-feedback-shell/pfeedback-feature-header",
+    "product-feedback-shell-pfeedback-feature-shell": "libs/product-feedback-shell/pfeedback-feature-shell",
     "ui-pfeedback": "apps/ui-pfeedback",
-    "ui-pfeedback-e2e": "apps/ui-pfeedback-e2e",
-    "ui-shell": "libs/ui-shell"
+    "ui-pfeedback-e2e": "apps/ui-pfeedback-e2e"
   }
 }

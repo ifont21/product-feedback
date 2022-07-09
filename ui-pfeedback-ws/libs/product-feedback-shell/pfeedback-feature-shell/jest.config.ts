@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'feedback-ang-ui-feedback',
+  displayName: 'product-feedback-shell-pfeedback-feature-shell',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -9,7 +9,8 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/feedback-ang/ui-feedback',
+  coverageDirectory:
+    '../../../coverage/libs/product-feedback-shell/pfeedback-feature-shell',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

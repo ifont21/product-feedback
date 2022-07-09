@@ -17,16 +17,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@pfeedback/feedback-ang/data": [
-        "libs/feedback-ang/feedback-data/src/index.ts"
+      "@pfeedback-ws/product-feedback-shell/pfeedback-feature-header": [
+        "libs/product-feedback-shell/pfeedback-feature-header/src/index.ts"
       ],
-      "@pfeedback/feedback-ang/feature": [
-        "libs/feedback-ang/feedback-features/src/index.ts"
+      "@pfeedback/shell": [
+        "libs/product-feedback-shell/pfeedback-feature-shell/src/index.ts"
       ],
-      "@pfeedback/feedback-ang/ui": [
-        "libs/feedback-ang/ui-feedback/src/index.ts"
-      ],
-      "@pfeedback/ui-shell": ["libs/ui-shell/src/index.ts"]
+      "@pfeedback/shell/header": [
+        "libs/product-feedback-shell/pfeedback-feature-header/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

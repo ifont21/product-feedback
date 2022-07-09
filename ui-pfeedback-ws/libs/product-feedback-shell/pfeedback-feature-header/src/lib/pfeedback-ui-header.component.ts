@@ -9,7 +9,7 @@ import {
 import { User } from '@auth0/auth0-angular';
 
 @Component({
-  selector: 'app-ui-header',
+  selector: 'app-pfeedback-ui-header',
   template: `<div class="h-14 px-6 py-8">
     <div class="flex justify-between">
       <div>
@@ -37,7 +37,7 @@ import { User } from '@auth0/auth0-angular';
     </div>
   </div> `,
 })
-export class UiHeaderComponent {
+export class PFeedbackUIHeaderComponent {
   @Output()
   signIn: EventEmitter<void> = new EventEmitter<void>();
 
@@ -53,7 +53,7 @@ export class UiHeaderComponent {
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [UiHeaderComponent],
-  exports: [UiHeaderComponent],
+  declarations: [PFeedbackUIHeaderComponent],
+  exports: [PFeedbackUIHeaderComponent],
 })
-export class UiHeaderModule {}
+export class PFeedbackUIHeaderModule {}

@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "pfeedback-ws",
+            "prefix": "app",
             "style": "kebab-case"
           }
         ]

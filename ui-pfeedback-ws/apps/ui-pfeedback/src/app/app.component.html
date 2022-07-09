@@ -1,13 +1,1 @@
-<div class="h-screen flex flex-col">
-    <!-- Header Navbar -->
-    <app-ui-header (signIn)="authService.loginWithRedirect()" (signOut)="authService.logout()"
-        [isAuthenticated]="!!(authService.isAuthenticated$ | async)" [userProfile]="authService.user$ | async">
-    </app-ui-header>
-    <!-- Router outlet Body content-->
-    <div class="grow">
-        <div class="max-w-[80%] my-20 mx-auto">
-            <app-auth-button></app-auth-button>
-            <app-projects></app-projects>
-        </div>
-    </div>
-</div>
+<app-pfeedback-shell></app-pfeedback-shell>
