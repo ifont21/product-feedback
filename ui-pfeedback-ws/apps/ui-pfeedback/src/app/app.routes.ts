@@ -1,5 +1,6 @@
 import { LandingPageComponent } from './pages/landing-page.component';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '@auth0/auth0-angular';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
       import('./pages/board-feedbacks/board-feedback-bundle.module').then(
         (m) => m.BoardFeedbackBundleModule
       ),
+    canActivate: [AuthGuard],
   },
   {
     path: 'roadmap',
@@ -24,6 +26,7 @@ const routes: Routes = [
       import('./pages/roadmap-view/roadmap-view-bundle.module').then(
         (m) => m.RoadMapViewBundleModule
       ),
+    canActivate: [AuthGuard],
   },
   {
     path: 'project-admin',
@@ -31,6 +34,11 @@ const routes: Routes = [
       import('./pages/project-admin/project-admin-bundle.module').then(
         (m) => m.ProjectAdminBundleModule
       ),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
   },
 ];
 
