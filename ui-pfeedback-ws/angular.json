@@ -2,6 +2,9 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "pfeedback-board-feedbacks-feature-board-feedback-shell": "libs/pfeedback-board-feedbacks/feature/board-feedback-shell",
+    "pfeedback-board-feedbacks-feature-shell": "libs/pfeedback-board-feedbacks/feature-shell",
+    "pfeedback-data-spec-board-spec": "libs/pfeedback-data-spec/board-spec",
     "product-feedback-shell-pfeedback-feature-header": "libs/product-feedback-shell/pfeedback-feature-header",
     "product-feedback-shell-pfeedback-feature-shell": "libs/product-feedback-shell/pfeedback-feature-shell",
     "ui-pfeedback": "apps/ui-pfeedback",

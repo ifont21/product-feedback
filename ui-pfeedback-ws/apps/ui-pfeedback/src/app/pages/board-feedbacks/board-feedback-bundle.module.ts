@@ -1,21 +1,7 @@
-import { RouterModule } from '@angular/router';
-import { Component, NgModule } from '@angular/core';
-
-@Component({
-  selector: 'app-board-feedback-bundle',
-  template: ` <div>Board Feedback Page!</div> `,
-})
-export class BoardFeedbackBundleComponent {}
-
-const routes = [
-  {
-    path: '',
-    component: BoardFeedbackBundleComponent,
-  },
-];
+import { NgModule } from '@angular/core';
+import { FeatureShellModule } from '@pfeedback/board-feedbacks/shell';
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  declarations: [BoardFeedbackBundleComponent],
+  imports: [FeatureShellModule],
 })
 export class BoardFeedbackBundleModule {}
