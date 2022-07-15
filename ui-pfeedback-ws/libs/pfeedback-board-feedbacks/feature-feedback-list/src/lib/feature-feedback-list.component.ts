@@ -1,9 +1,10 @@
+import { RouterModule } from '@angular/router';
 import { UIFeedbackListModule } from './ui-feedback-list.component';
 import { UIFeedbackListHeaderModule } from './ui-feedback-list-header.component';
 import { FeatureFeedbackListService } from './feature-feedback-list.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { Component, Input, NgModule, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { FeedbackDTO } from '@pfeedback/feedback-data-spec';
 
 @Component({
@@ -20,8 +21,8 @@ import { FeedbackDTO } from '@pfeedback/feedback-data-spec';
   </div>`,
 })
 export class FeatureFeedbackListComponent implements OnInit {
-  @Input()
-  boardId = '';
+  // TODO: should be fetch using the url
+  public readonly boardId = 'b7c362c2-a617-4bf0-bf1f-014e0aec7bcb';
 
   boardFeedbacks$: Observable<FeedbackDTO[]> | undefined;
 
@@ -37,7 +38,17 @@ export class FeatureFeedbackListComponent implements OnInit {
 }
 
 @NgModule({
-  imports: [CommonModule, UIFeedbackListHeaderModule, UIFeedbackListModule],
+  imports: [
+    CommonModule,
+    UIFeedbackListHeaderModule,
+    UIFeedbackListModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: FeatureFeedbackListComponent,
+      },
+    ]),
+  ],
   declarations: [FeatureFeedbackListComponent],
   exports: [FeatureFeedbackListComponent],
   providers: [FeatureFeedbackListService],

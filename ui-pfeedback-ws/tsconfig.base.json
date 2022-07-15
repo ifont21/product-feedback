@@ -23,6 +23,9 @@
       "@pfeedback/board-data-spec": [
         "libs/pfeedback-data-spec/board-spec/src/index.ts"
       ],
+      "@pfeedback/board-feedback/create-feedback": [
+        "libs/pfeedback-board-feedbacks/feature-create-feedback/src/index.ts"
+      ],
       "@pfeedback/board-feedbacks/feedback-list": [
         "libs/pfeedback-board-feedbacks/feature-feedback-list/src/index.ts"
       ],

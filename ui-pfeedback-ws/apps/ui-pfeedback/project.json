@@ -5,9 +5,7 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/ui-pfeedback",
         "index": "apps/ui-pfeedback/src/index.html",
@@ -24,9 +22,7 @@
             "output": "/"
           }
         ],
-        "styles": [
-          "apps/ui-pfeedback/src/styles.scss"
-        ],
+        "styles": ["apps/ui-pfeedback/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -91,9 +87,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/ui-pfeedback"
-      ],
+      "outputs": ["coverage/apps/ui-pfeedback"],
       "options": {
         "jestConfig": "apps/ui-pfeedback/jest.config.ts",
         "passWithNoTests": true

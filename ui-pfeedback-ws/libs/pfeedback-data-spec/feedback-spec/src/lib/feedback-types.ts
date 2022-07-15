@@ -5,3 +5,9 @@ export interface FeedbackDTO {
   votes: number;
   categoryName: string;
 }
+
+export interface FeedbackPayload {
+  title: string;
+  description?: string;
+  categoryId: string;
+}
