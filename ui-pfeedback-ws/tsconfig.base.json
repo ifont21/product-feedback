@@ -23,8 +23,15 @@
       "@pfeedback/board-data-spec": [
         "libs/pfeedback-data-spec/board-spec/src/index.ts"
       ],
+      "@pfeedback/board-feedbacks/feedback-list": [
+        "libs/pfeedback-board-feedbacks/feature-feedback-list/src/index.ts"
+      ],
       "@pfeedback/board-feedbacks/shell": [
         "libs/pfeedback-board-feedbacks/feature-shell/src/index.ts"
+      ],
+      "@pfeedback/core": ["libs/pfeedback-core/src/index.ts"],
+      "@pfeedback/feedback-data-spec": [
+        "libs/pfeedback-data-spec/feedback-spec/src/index.ts"
       ],
       "@pfeedback/shell": [
         "libs/product-feedback-shell/pfeedback-feature-shell/src/index.ts"

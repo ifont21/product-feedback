@@ -1,8 +1,8 @@
-import { BoardDetailDTO } from './board-types';
 import { Inject, Injectable, Optional } from '@angular/core';
 import { SpecConfig, Configuration } from './config';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { FeedbackDTO } from './feedback-types';
 
 @Injectable({
   providedIn: 'root',
@@ -13,9 +13,13 @@ export class PFeedbackBoardSpecService {
     private http: HttpClient
   ) {}
 
-  getBoardDetails(boardId: string): Observable<BoardDetailDTO> {
-    return this.http.get<BoardDetailDTO>(
-      `${this.config?.basePath}/boards/${boardId}`
+  getBoardFeedbacks({
+    boardId,
+  }: {
+    boardId: string;
+  }): Observable<FeedbackDTO[]> {
+    return this.http.get<FeedbackDTO[]>(
+      `${this.config.basePath}/boards/${boardId}/feedbacks`
     );
   }
 }

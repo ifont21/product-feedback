@@ -112,13 +112,12 @@ func (r FeedbackDbRepository) GetPostById(postId int64) (feedback.PostDetailsDTO
 // Comands
 func (r FeedbackDbRepository) CreatePost(aggregate feedback.PostAggregate) error {
 	sqlStatement := `
-	 INSERT	INTO pf_post(id, pf_board_id, title, description, status, pf_category_id)
-	 VALUES ($1, $2, $3, $4, $5, $6)
+	 INSERT	INTO pf_post(pf_board_id, title, description, status, pf_category_id)
+	 VALUES ($1, $2, $3, $4, $5)
 	`
 
 	_, err := r.db.Exec(
 		sqlStatement,
-		aggregate.GetPost().ID,
 		aggregate.GetPost().
 			BoardID.
 			GetID(),

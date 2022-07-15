@@ -1,3 +1,4 @@
+import { PFeedbackCoreModule } from '@pfeedback/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -7,7 +8,6 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { PFeedbackShellModule } from '@pfeedback/shell';
 import { AppRoutingModule } from './app.routes';
-import { BasePath } from '@pfeedback/board-data-spec';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +16,7 @@ import { BasePath } from '@pfeedback/board-data-spec';
     PFeedbackShellModule,
     AppRoutingModule,
     HttpClientModule,
+    PFeedbackCoreModule.forRoot({ serverUrl: environment.dev.serverUrl }),
     AuthModule.forRoot({
       ...environment.auth,
       httpInterceptor: {
@@ -28,10 +29,6 @@ import { BasePath } from '@pfeedback/board-data-spec';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthHttpInterceptor,
       multi: true,
-    },
-    {
-      provide: BasePath,
-      useValue: `${environment.dev.serverUrl}/api`,
     },
   ],
   bootstrap: [AppComponent],
