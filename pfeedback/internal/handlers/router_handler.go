@@ -41,6 +41,9 @@ func (h *RouterHandler) RegisterRoutes(v1 *echo.Group) {
 	boardFeedbacks.GET("", h.feedbackHttpHandler.GetAllFeedbacks)
 	boardFeedbacks.POST("", h.feedbackHttpHandler.CreatePost)
 
+	categories := v1.Group("/categories")
+	categories.GET("", h.feedbackHttpHandler.GetAllCategories)
+
 	feedbacks := v1.Group("/feedbacks")
 	feedbacks.GET("/:id", h.feedbackHttpHandler.GetFeedbackById)
 	feedbacks.PUT("/:id", h.feedbackHttpHandler.UpdatePost)

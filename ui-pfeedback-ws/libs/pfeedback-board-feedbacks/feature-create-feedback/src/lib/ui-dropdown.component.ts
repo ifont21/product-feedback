@@ -6,6 +6,7 @@ import {
   NgModule,
   Output,
 } from '@angular/core';
+import { DropdownOption } from './types';
 
 @Component({
   selector: 'app-ui-dropdown',
@@ -37,7 +38,7 @@ import {
       <li
         *ngFor="let option of options"
         class="px-6 py-3 border-b border-indigo-900/10 cursor-pointer"
-        (click)="selectItem(option.key)"
+        (click)="selectItem(option)"
       >
         {{ option.label }}
       </li>
@@ -46,7 +47,7 @@ import {
 })
 export class UIDropdownComponent {
   @Input()
-  options: { key: string; label: string | number }[] = [];
+  options: DropdownOption[] = [];
 
   @Output()
   selectedItem: EventEmitter<string | number> = new EventEmitter<
@@ -60,9 +61,9 @@ export class UIDropdownComponent {
     this.open = !this.open;
   }
 
-  selectItem(value: string | number): void {
-    this.selected = value;
-    this.selectedItem.emit(this.selected);
+  selectItem(value: DropdownOption): void {
+    this.selected = value.label;
+    this.selectedItem.emit(value.key);
     this.toggleOpen();
   }
 }

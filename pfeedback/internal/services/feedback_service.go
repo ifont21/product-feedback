@@ -8,6 +8,7 @@ import (
 type IFeedbackService interface {
 	GetAllFeedbacks(boardId uuid.UUID) ([]domain.PostDTO, error)
 	GetFeedbackById(id int64) (domain.PostDetailsDTO, error)
+	GetCategories() ([]domain.CategoryDTO, error)
 	CreatePost(title string, description string, boardId uuid.UUID, categoryId int64) error
 	UpdatePost(id int64, title string, description string, status domain.StatusValue, categoryId int64) error
 	UpVote(id int64) error
@@ -29,6 +30,16 @@ func (s FeedbackService) GetAllFeedbacks(boardId uuid.UUID) ([]domain.PostDTO, e
 
 	if err != nil {
 		return []domain.PostDTO{}, err
+	}
+
+	return data, nil
+}
+
+func (s FeedbackService) GetCategories() ([]domain.CategoryDTO, error) {
+	data, err := s.feedbackRepository.GetCategories()
+
+	if err != nil {
+		return []domain.CategoryDTO{}, err
 	}
 
 	return data, nil

@@ -67,6 +67,40 @@ func (r FeedbackDbRepository) GetBoardPostsByCriteria(boardId uuid.UUID, sortBy 
 	return posts, nil
 }
 
+func (r FeedbackDbRepository) GetCategories() ([]feedback.CategoryDTO, error) {
+	sqlStatement := "SELECT id, name FROM pf_category"
+
+	rows, err := r.db.Query(sqlStatement)
+
+	if err != nil {
+		return []feedback.CategoryDTO{}, err
+	}
+
+	categories := make([]feedback.CategoryDTO, 0)
+	defer rows.Close()
+
+	for rows.Next() {
+		var category feedback.CategoryDTO
+		err = rows.Scan(
+			&category.ID,
+			&category.Name,
+		)
+
+		if err != nil {
+			return []feedback.CategoryDTO{}, err
+		}
+		categories = append(categories, category)
+	}
+
+	err = rows.Err()
+
+	if err != nil {
+		return []feedback.CategoryDTO{}, err
+	}
+
+	return categories, nil
+}
+
 func (r FeedbackDbRepository) GetPostById(postId int64) (feedback.PostDetailsDTO, error) {
 	sqlStatement := `
 	SELECT pf_post.id,

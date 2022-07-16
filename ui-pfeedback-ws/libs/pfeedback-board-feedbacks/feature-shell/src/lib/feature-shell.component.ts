@@ -6,7 +6,7 @@ import { BoardFeedbacksHeadingService } from './board-feedbacks-heading.service'
 @Component({
   selector: 'app-board-feedback-shell',
   template: `
-    <div class="flex space-x-7">
+    <div class="flex justify-center space-x-7">
       <div class="flex-none w-64">
         <app-board-feedback-heading-container
           [boardId]="boardId"

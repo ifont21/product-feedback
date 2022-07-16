@@ -11,3 +11,8 @@ export interface FeedbackPayload {
   description?: string;
   categoryId: string;
 }
+
+export interface CategoryDTO {
+  id: number;
+  name: string;
+}

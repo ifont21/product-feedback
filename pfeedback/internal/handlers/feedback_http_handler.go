@@ -48,6 +48,16 @@ func (h FeedbackHttpHandler) GetFeedbackById(c echo.Context) error {
 	return c.JSON(http.StatusOK, feedback)
 }
 
+func (h FeedbackHttpHandler) GetAllCategories(c echo.Context) error {
+	categories, err := h.feedbackService.GetCategories()
+
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, err)
+	}
+
+	return c.JSON(http.StatusOK, categories)
+}
+
 func (h FeedbackHttpHandler) CreatePost(c echo.Context) error {
 	var payload domain.PostPayload
 	boardId := uuid.MustParse(c.Param("boardId"))

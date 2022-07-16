@@ -6,6 +6,7 @@ type FeedbackRepository interface {
 	// Queries
 	GetPostById(postId int64) (PostDetailsDTO, error)
 	GetBoardPostsByCriteria(boardId uuid.UUID, sortBy string, filterByCategory string) ([]PostDTO, error)
+	GetCategories() ([]CategoryDTO, error)
 
 	// Comands
 	CreatePost(PostAggregate) error

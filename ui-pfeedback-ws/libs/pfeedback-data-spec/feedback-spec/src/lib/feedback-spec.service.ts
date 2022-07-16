@@ -2,7 +2,7 @@ import { Inject, Injectable, Optional } from '@angular/core';
 import { SpecConfig, Configuration } from './config';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { FeedbackDTO, FeedbackPayload } from './feedback-types';
+import { CategoryDTO, FeedbackDTO, FeedbackPayload } from './feedback-types';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +21,10 @@ export class PFeedbackBoardSpecService {
     return this.http.get<FeedbackDTO[]>(
       `${this.config.basePath}/boards/${boardId}/feedbacks`
     );
+  }
+
+  getAllCategories(): Observable<CategoryDTO[]> {
+    return this.http.get<CategoryDTO[]>(`${this.config.basePath}/categories`);
   }
 
   createFeedback(
