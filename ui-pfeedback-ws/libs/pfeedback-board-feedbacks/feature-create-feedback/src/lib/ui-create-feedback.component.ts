@@ -15,7 +15,24 @@ import { UIDropdownModule } from './ui-dropdown.component';
 @Component({
   selector: 'app-ui-create-feedback',
   template: `
-    <form [formGroup]="form">
+    <form [formGroup]="form" class="relative">
+      <div
+        class="border rounded-full w-14 h-14 flex justify-center items-center bg-[url('assets/background-header.png')] bg-no-repeat bg-cover bg-center absolute -top-6 left-10"
+      >
+        <svg width="9" height="9" xmlns="http://www.w3.org/2000/svg">
+          <text
+            transform="translate(-24 -20)"
+            fill="#F2F4FE"
+            fill-rule="evenodd"
+            font-family="Jost-Bold, Jost"
+            font-size="14"
+            font-weight="bold"
+            class="fill-white"
+          >
+            <tspan x="24" y="27.5">+</tspan>
+          </text>
+        </svg>
+      </div>
       <div class="rounded-lg p-10 bg-white">
         <h1 class="text-2xl font-bold tracking-tight text-indigo-900 mb-10">
           Create New Feedback

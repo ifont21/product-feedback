@@ -4,7 +4,7 @@ import { BoardDetailDTO } from '@pfeedback/board-data-spec';
 @Component({
   selector: 'app-board-feedbacks-heading',
   template: `<div
-    class="h-36 rounded-lg flex items-end p-6 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-600"
+    class="h-36 rounded-lg flex items-end p-6 bg-[url('assets/background-header.png')] bg-no-repeat bg-cover"
   >
     <div>
       <h1 class="text-xl text-white font-bold tracking-tight">{{ boardHeading?.project }}</h1>
